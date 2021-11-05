@@ -1,20 +1,40 @@
-
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
+import logo from '../assets/logo.png'
 
 
 class Header extends Component {
   render() {
+    console.log("logged in:", this.props.logged_in)
+    console.log("user:", this.props.current_user)
+    console.log("sign up:", this.props.new_user_route)
+    console.log("sign in:", this.props.sign_in_route)
+    console.log("sign out:", this.props.sign_out_route)
+    const {logged_in, current_user, new_user_route, sign_in_route, sign_out_route} = this.props
     return (
       <header>
-
-        <h1 id="title">APARTMENT LYFE</h1>
-        
-        <div className="nav-links">
+       <NavLink to="/">
+         <img src={logo} alt="apartment logo" className="logo" />
+         </NavLink>
+         <div className="nav-links">
           <ul>
-            <NavLink to="/apartmentindex">Find your new home today!</NavLink>
+          <NavLink to="/apartmentindex">Find your new home today!</NavLink>
           </ul>
-
+          {!logged_in &&
+          <>
+          <ul>
+            <a href={new_user_route}>Sign Up</a>
+            </ul>
+            <ul>
+            <a href={sign_in_route}>Sign In</a>
+          </ul>
+          </>
+          }
+          { logged_in && 
+          <ul>
+          <a href={sign_out_route}>Sign Out</a>
+          </ul>
+  }
         </div>
       </header>
     )

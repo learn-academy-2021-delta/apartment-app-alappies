@@ -17,7 +17,7 @@ class App extends Component {
     return (    
   <>
   <Router>
-    <Header />
+    <Header {...this.props}/>
     <Routes>
     <Route exact path="/" element={ <Home /> } />
     <Route path="/index" element={ <ApartmentIndex /> } />
