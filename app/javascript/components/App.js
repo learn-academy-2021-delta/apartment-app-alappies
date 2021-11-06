@@ -5,7 +5,6 @@ import ApartmentIndex from './pages/ApartmentIndex'
 import Footer from './components/Footer'
 import ApartmentShow from './pages/ApartmentShow'
 
-
 import {
   BrowserRouter as Router, 
   Routes,
@@ -13,6 +12,21 @@ import {
 }from 'react-router-dom'
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      apartments: apartments
+    }
+  }
+  
+  createNewApartment = (newapartment) => {
+    console.log(newapartment)
+  }
+
+  updatedApartment = (updatedInfo) => {
+    console.log(updatedInfo)
+  }
+
   render() {
     return (    
   <>
