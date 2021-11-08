@@ -15,31 +15,33 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      apartments: apartments
+      apartments: []
     }
   }
   
-  createNewApartment = (newapartment) => {
-    console.log(newapartment)
-  }
+componentDidMount(){
+  this.readApartment()
+}
+readApartment = () => {
+  fetch("/apartments")
+  .then(response => response.json())
+  .then(payload => this.setState({apartments: payload}))
+  .catch(errors => console.log("index errors:", errors))
 
-  updatedApartment = (updatedInfo) => {
-    console.log(updatedInfo)
-  }
-
+}
   render() {
-    return (    
-  <>
+    const { apartments } = this.state
+    return(
   <Router>
     <Header {...this.props} />
     <Routes>
     <Route exact path="/" element={ <Home /> } />
-    <Route path="/apartmentindex" element={ <ApartmentIndex /> } />
+    <Route path="/apartmentindex" element={ <ApartmentIndex apartment={apartments} /> } />
     <Route path="/show" element={ <ApartmentShow /> } />
     </Routes>
     <Footer />
   </Router>
-  </>
+
     )
   }
 }

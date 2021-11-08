@@ -56,7 +56,9 @@ apartments = [
     }
 ]
 
+first_user = User.first
+
 apartments.each do |attributes|
 	Apartment.create attributes
-	p "creating apartments #{attributes}"
+    first_user.apartments.create attributes
 end
