@@ -3,9 +3,10 @@
 
   //* HEADER *//
 header {
-  background-color: #754906;
+  background-color: #c48d3a;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .logo{
   width: 100px;
@@ -16,6 +17,29 @@ header {
   flex-direction: row;
   align-items: flex-end;
   padding-right: 50px;
+}
+.nav-bar {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 10px;
+}
+footer {
+  background-color: #c48d3a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header{
+  text-align: center;
+}
+#homeTag{
+  text-align: center;
+}
+#indexHeader{
+  text-align: center;
+}
+#indexPtag{
+  text-align: center;
 }
 
   
