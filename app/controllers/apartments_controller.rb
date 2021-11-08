@@ -1,14 +1,14 @@
 class ApartmentsController < ApplicationController
      def index
         apartments = Apartments.all
-        render json: cats
+        render json: apartments
     end
     def create
         apartment = Apartment.create(apartment_params)
         if apartment.valid?
             render json: apartment
         else
-            render jsoon: cat.errors, status: 422
+            render json: apartment.errors, status: 422
         end
     end
     def update
@@ -17,7 +17,7 @@ class ApartmentsController < ApplicationController
         if apartment.valid?
             render json: apartment
         else
-            render jsoon: cat.errors, status: 422
+            render json: apartment.errors, status: 422
         end
     end
     def destroy
