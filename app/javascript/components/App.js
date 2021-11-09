@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import ApartmentIndex from './pages/ApartmentIndex'
 import Footer from './components/Footer'
 import ApartmentShow from './pages/ApartmentShow'
-import ProtectedIndex from '.pages/ApartmentIndex'
+
 
 import {
   BrowserRouter as Router, 
@@ -28,7 +28,6 @@ readApartment = () => {
   .then(response => response.json())
   .then(payload => this.setState({apartments: payload}))
   .catch(errors => console.log("index errors:", errors))
-
 }
   render() {
     const { apartments } = this.state
@@ -37,7 +36,10 @@ readApartment = () => {
       <Header {...this.props} />
       <Routes>
         <Route exact path="/" element={ <Home /> } />
-        <Route path="/apartmentindex" element={ <ApartmentIndex apartment={apartments} /> } />
+        <Route
+            path="/apartmentindex"
+            element={<ApartmentIndex apartments={apartments} />}
+            />
         <Route path="/show" element={ <ApartmentShow /> } />
       </Routes>
       <Footer />

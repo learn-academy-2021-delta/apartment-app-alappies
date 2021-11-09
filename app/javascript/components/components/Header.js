@@ -1,24 +1,25 @@
+
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import logo from '../assets/logo.png'
 
-
 class Header extends Component {
   render() {
     const {
-      logged_in, 
-      current_user, 
-      new_user_route, 
-      sign_in_route, 
-      sign_out_route} = this.props
+      logged_in,
+      current_user,
+      new_user_route,
+      sign_in_route,
+      sign_out_route
+    } = this.props
     return (
       <header>
-       <NavLink to="/">
-         <img src={logo} alt="apartment logo" className="logo"/>
-         </NavLink>
-         <div className="nav-bar">
+        <NavLink to="/">
+          <img src={logo} alt="apartment app logo" className="logo"/>
+        </NavLink>
+        <div className="nav-bar">
           <ul>
-          <NavLink to="/apartmentindex" className="navlink">Search Apartments</NavLink>
+            <NavLink to="/apartmentindex" className="nav-link">See All the Apartments</NavLink>
           </ul>
           <ul>
             {logged_in &&

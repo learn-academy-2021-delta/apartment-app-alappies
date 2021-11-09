@@ -1,42 +1,40 @@
 import React, { Component } from 'react'
+import { Button } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
-import { CardTitle } from 'reactstrap'
-import livingroom from '../assets/cozylivingroom.jpeg'
-
+import { faHome, faCity } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class ProtectedIndex extends Component {
   render() {
     const { apartments } = this.props
     return (
-      <>
-      <div className="page-body"></div>
-        <h1 id="indexHeader">GET COMFY!</h1>
-        <p id="indexPtag">Take a look around!</p>
-        <div className="index-cards">
+      <div className="page-body">
+        <h3>All the Apartments</h3>
+        <br />
+        <br />
+        <article className="cards">
           {apartments && apartments.map(apartment => {
             return (
-              <Row key={apartment.id}>
-                <Col sm="6">
-                  <Card body>
-                    <CardTitle tag="h5">Your Next Home</CardTitle>
-                    <h2>🏘</h2>
-                    <NavLink to={`/apartmentshow/${apartment.id}`}><Button>Take a closer look</Button></NavLink>
-                  </Card>
-                </Col>
-              </Row>
-            
+              <section key={apartment.id} className="card">
+                <div>
+                  <FontAwesomeIcon icon={faHome} className="fa-icon" />
+                    {apartment.street}
+                </div>
+                <div>
+                  <FontAwesomeIcon icon={faCity} className="fa-icon" />
+                    {apartment.city}, {apartment.state}
+                </div>
+                <br />
+                <NavLink to={`/apartmentshow/${apartment.id}`}>
+                  <Button>
+                    More Info
+                  </Button>
+                </NavLink>
+              </section>
             )
           })}
-        </div>
-        
-        <img
-                src={livingroom}
-                alt="cozylivingroom"
-                className="livingroom"
-        />
-
-      </>
-      
+        </article>
+      </div>
     )
   }
 }
