@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import ApartmentIndex from './pages/ApartmentIndex'
 import Footer from './components/Footer'
 import ApartmentShow from './pages/ApartmentShow'
+import ProtectedIndex from '.pages/ApartmentIndex'
 
 import {
   BrowserRouter as Router, 
