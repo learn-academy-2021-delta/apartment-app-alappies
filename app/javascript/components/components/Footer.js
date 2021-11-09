@@ -9,15 +9,11 @@ class Footer extends Component{
         <div className="nav-bar">
           <Nav className="nav-links">
           <NavItem>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/">HOME</NavLink>
           </NavItem>
-          <br />
-          <br />
           <NavItem>
             <NavLink to="/apartmentindex">See New Apartments</NavLink>
           </NavItem>
-          <br />
-          <br />
           <NavItem>
             <NavLink to="/users/sign_up">Login</NavLink>
           </NavItem>

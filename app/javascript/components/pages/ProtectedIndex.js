@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { Button } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
+import { faHome, faCity } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-
-class ApartmentIndex extends Component {
+class ProtectedIndex extends Component {
   render() {
     const { apartments } = this.props
     return (
@@ -16,11 +17,11 @@ class ApartmentIndex extends Component {
             return (
               <section key={apartment.id} className="card">
                 <div>
-                  🛣
+                  <FontAwesomeIcon icon={faHome} className="fa-icon" />
                     {apartment.street}
                 </div>
                 <div>
-                  🌆
+                  <FontAwesomeIcon icon={faCity} className="fa-icon" />
                     {apartment.city}, {apartment.state}
                 </div>
                 <br />
@@ -37,4 +38,4 @@ class ApartmentIndex extends Component {
     )
   }
 }
-export default ApartmentIndex
+export default ProtectedIndex
