@@ -7,7 +7,7 @@ Enzyme.configure({adapter: new Adapter()})
 describe("When Home renders", () => {
     it ("displays an image",  () => {
         const home = shallow(<Home />)
-        expect(home.find("img").prop("srtc"))
+        expect(home.find("img").prop("src"))
     })
 })
 

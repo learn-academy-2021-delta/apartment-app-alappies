@@ -32,15 +32,15 @@ readApartment = () => {
   render() {
     const { apartments } = this.state
     return(
-  <Router>
-    <Header {...this.props} />
-    <Routes>
-    <Route exact path="/" element={ <Home /> } />
-    <Route path="/apartmentindex" element={ <ApartmentIndex apartment={apartments} /> } />
-    <Route path="/show" element={ <ApartmentShow /> } />
-    </Routes>
-    <Footer />
-  </Router>
+    <Router>
+      <Header {...this.props} />
+      <Routes>
+        <Route exact path="/" element={ <Home /> } />
+        <Route path="/apartmentindex" element={ <ApartmentIndex apartment={apartments} /> } />
+        <Route path="/show" element={ <ApartmentShow /> } />
+      </Routes>
+      <Footer />
+    </Router>
 
     )
   }
