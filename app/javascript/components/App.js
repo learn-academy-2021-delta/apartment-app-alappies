@@ -40,7 +40,11 @@ readApartment = () => {
             path="/apartmentindex"
             element={<ApartmentIndex apartments={apartments} />}
             />
-        <Route path="/show" element={ <ApartmentShow /> } />
+        <Route path="/apartmentshow/:id" render={ (props) =>{
+          let id = props.match.params.id
+          let apartment = this.setState.apartments.find(a => a.id === id)
+          return <ApartmentShow apartment={apartment} />
+        }}/>
       </Routes>
       <Footer />
     </Router>
