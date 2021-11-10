@@ -15,10 +15,10 @@ class ApartmentShow extends Component {
             <section className="card">
               <h4>Location</h4>
               <h5>
-                🛣{apartment.street}
+                🛣 {apartment.street}
               </h5>
               <h5>
-                🌉{apartment.city}, {apartment.state}
+                🌉 {apartment.city}, {apartment.state}
               </h5>
               <br />
               <h4>Manager Info</h4>
@@ -32,12 +32,12 @@ class ApartmentShow extends Component {
               <h4>Details</h4>
               <h5>
                 💰{apartment.price} per month
+                </h5>
+              <h5>
+                🛌 Bedrooms: {apartment.bedrooms}
               </h5>
               <h5>
-                🛌Bedrooms: {apartment.bedrooms}
-              </h5>
-              <h5>
-                🛁Bathrooms: {apartment.bathrooms}
+                🛁 Bathrooms: {apartment.bathrooms}
               </h5>
               <h5>
                 🦮Pets Allowed: {apartment.pets}

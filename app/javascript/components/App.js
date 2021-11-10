@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import Header from './components/Header'
 import Home from './pages/Home'
 import ApartmentIndex from './pages/ApartmentIndex'
+import ProtectedIndex from './pages/ProtectedIndex'
 import Footer from './components/Footer'
 import ApartmentShow from './pages/ApartmentShow'
 
 
 import {
-  BrowserRouter as Router, 
+  BrowserRouter, 
   Routes,
   Route
 }from 'react-router-dom'
@@ -32,7 +33,7 @@ readApartment = () => {
   render() {
     const { apartments } = this.state
     return(
-    <Router>
+    <BrowserRouter>
       <Header {...this.props} />
       <Routes>
         <Route exact path="/" element={ <Home /> } />
@@ -40,14 +41,20 @@ readApartment = () => {
             path="/apartmentindex"
             element={<ApartmentIndex apartments={apartments} />}
             />
-        <Route path="/apartmentshow/:id" render={ (props) =>{
+        <Route path="/apartmentshow/:id" render={(props) =>{
           let id = props.match.params.id
-          let apartment = this.setState.apartments.find(a => a.id === id)
+          let apartment = this.setState.apartments.find(a => a.id === +id)
           return <ApartmentShow apartment={apartment} />
         }}/>
+        {this.props.logged_in &&
+            <Route path="/myapartments" render={(props) => {
+              let apartments = this.state.apartments.filter(a => a.user_id === this.props.current_user.id)
+              return <ProtectedIndex apartments={apartments} />
+            }}/>
+          }
       </Routes>
       <Footer />
-    </Router>
+    </BrowserRouter>
 
     )
   }

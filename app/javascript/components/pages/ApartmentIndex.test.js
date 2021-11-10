@@ -1,15 +1,14 @@
+
 import React from 'react'
 import Enzyme, { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import ApartmentIndex from './ApartmentIndex'
-import mockPic from '../mockFile.js'
-
 
 Enzyme.configure({adapter: new Adapter()})
 
-describe("When ApartmentIndex renders", () => {
-    it("displays an image", () => {
-        const apartmentindex = shallow(<ApartmentIndex />)
-        expect(apartmentindex.find("img").prop("src")).toEqual(mockPic);
-    })
+describe("When index renders", () => {
+  it("displays a header", () => {
+    const indexHeading = shallow(<ApartmentIndex />).find("h3")
+    expect(indexHeading.text()).toEqual("Your Future Home Awaits!")
+  })
 })

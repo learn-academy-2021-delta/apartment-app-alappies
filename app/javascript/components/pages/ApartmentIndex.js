@@ -8,7 +8,7 @@ class ApartmentIndex extends Component {
     const { apartments } = this.props
     return (
       <div className="page-body">
-        <h3>All the Apartments</h3>
+        <h3>Your Future Home Awaits!</h3>
         <br />
         <br />
         <article className="cards">
