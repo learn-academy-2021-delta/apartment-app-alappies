@@ -36,7 +36,7 @@ readApartment = () => {
     <BrowserRouter>
       <Header {...this.props} />
       <Switch>
-        <Route exact path="/" component={ <Home /> } />
+      <Route exact path="/" component={Home} />
         <Route
             path="/apartmentindex"
             render={() => <ApartmentIndex apartments={apartments} />}
