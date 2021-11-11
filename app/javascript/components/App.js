@@ -9,7 +9,7 @@ import ApartmentShow from './pages/ApartmentShow'
 
 import {
   BrowserRouter, 
-  Routes,
+  Switch,
   Route
 }from 'react-router-dom'
 
@@ -35,15 +35,15 @@ readApartment = () => {
     return(
     <BrowserRouter>
       <Header {...this.props} />
-      <Routes>
-        <Route exact path="/" element={ <Home /> } />
+      <Switch>
+        <Route exact path="/" component={ <Home /> } />
         <Route
             path="/apartmentindex"
-            element={<ApartmentIndex apartments={apartments} />}
+            render={() => <ApartmentIndex apartments={apartments} />}
             />
         <Route path="/apartmentshow/:id" render={(props) =>{
           let id = props.match.params.id
-          let apartment = this.setState.apartments.find(a => a.id === +id)
+          let apartment = this.state.apartments.find(a => a.id === +id)
           return <ApartmentShow apartment={apartment} />
         }}/>
         {this.props.logged_in &&
@@ -52,7 +52,7 @@ readApartment = () => {
               return <ProtectedIndex apartments={apartments} />
             }}/>
           }
-      </Routes>
+      </Switch>
       <Footer />
     </BrowserRouter>
 
