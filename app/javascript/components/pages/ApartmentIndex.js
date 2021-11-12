@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button } from 'reactstrap'
 import { NavLink } from 'react-router-dom'
+import comfyChair from '../assets/comfyChair.jpeg'
 
 
 class ApartmentIndex extends Component {
@@ -9,6 +10,11 @@ class ApartmentIndex extends Component {
     return (
       <div className="page-body">
         <h3>Your Future Home Awaits!</h3>
+        <img id="index-image"
+          src={comfyChair}
+          alt="Dream Home Img"
+          className="comfyChair"
+        />
         <br />
         <br />
         <article className="cards">

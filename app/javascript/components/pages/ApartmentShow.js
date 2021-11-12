@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Button } from 'reactstrap'
+import dorm1 from '../assets/dorm1.jpeg'
 
 
 class ApartmentShow extends Component {
@@ -15,6 +16,11 @@ class ApartmentShow extends Component {
           {apartment &&
             <section className="card">
               <h4>Location</h4>
+              <img id="index-image"
+          src={dorm1}
+          alt="Dream Home Img"
+          className="dorm1"
+        />
               <h5>
                 🛣 {apartment.street}
               </h5>

@@ -1,5 +1,6 @@
 @import 'bootstrap';
 
+
 *{
   margin: 0;
   padding: 0;
@@ -53,6 +54,12 @@ footer {
   display: flex;
   justify-content: space-around;
 }
+#index-image {
+  align-items: center;
+  height: 200px;
+  width: 250px;
+}
+
 
 
 #indexPtag{
